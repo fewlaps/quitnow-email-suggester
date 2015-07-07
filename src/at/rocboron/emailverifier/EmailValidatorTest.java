@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertFalse;
+import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
 public class EmailValidatorTest {
@@ -80,79 +81,129 @@ public class EmailValidatorTest {
         assertFalse(ev.isValidEmail("plainaddress"));
     }
 
+    @Test
     public void shouldSayKO2() {
         assertFalse(ev.isValidEmail("#@%^%#$@#$@#.com"));
     }
 
+    @Test
     public void shouldSayKO3() {
         assertFalse(ev.isValidEmail("@example.com"));
     }
 
+    @Test
     public void shouldSayKO4() {
         assertFalse(ev.isValidEmail("Joe Smith <email@example.com>"));
     }
 
+    @Test
     public void shouldSayKO5() {
         assertFalse(ev.isValidEmail("email.example.com"));
     }
 
+    @Test
     public void shouldSayKO6() {
         assertFalse(ev.isValidEmail("email@example@example.com"));
     }
 
+    @Test
     public void shouldSayKO7() {
         assertFalse(ev.isValidEmail(".email@example.com"));
     }
 
+    @Test
     public void shouldSayKO8() {
         assertFalse(ev.isValidEmail("email.@example.com"));
     }
 
+    @Test
     public void shouldSayKO9() {
         assertFalse(ev.isValidEmail("email..email@example.com"));
     }
 
+    @Test
     public void shouldSayKO10() {
         assertFalse(ev.isValidEmail("?????@example.com"));
     }
 
+    @Test
     public void shouldSayKO11() {
         assertFalse(ev.isValidEmail("email@example.com (Joe Smith)"));
     }
 
+    @Test
     public void shouldSayKO12() {
         assertFalse(ev.isValidEmail("email@example"));
     }
 
+    @Test
     public void shouldSayKO13() {
-        assertFalse(ev.isValidEmail("email@-example.com"));
-    }
-
-    public void shouldSayKO14() {
-        assertFalse(ev.isValidEmail("email@example.web"));
-    }
-
-    public void shouldSayKO15() {
         assertFalse(ev.isValidEmail("email@111.222.333.44444"));
     }
 
-    public void shouldSayKO16() {
+    @Test
+    public void shouldSayKO14() {
         assertFalse(ev.isValidEmail("email@example..com"));
     }
 
-    public void shouldSayKO17() {
+    @Test
+    public void shouldSayKO15() {
         assertFalse(ev.isValidEmail("Abc..123@example.com"));
     }
 
-    public void shouldSayKO18() {
+    @Test
+    public void shouldSayKO16() {
         assertFalse(ev.isValidEmail("“(),:;<>[\\]@example.com"));
     }
 
-    public void shouldSayKO19() {
+    @Test
+    public void shouldSayKO17() {
         assertFalse(ev.isValidEmail("just\"not\"right@example.com"));
     }
 
-    public void shouldSayKO20() {
+    @Test
+    public void shouldSayKO18() {
         assertFalse(ev.isValidEmail("this\\ is\"really\"not\\allowed@example.com"));
     }
+
+    @Test
+    public void shouldReturnSameEmail1(){
+        assertEquals("roc@rocboron.at", ev.getSuggestedEmail("roc@rocboron.at"));
+    }
+
+    @Test
+    public void shouldReturnSameEmail2(){
+        assertEquals("roc@fewlaps.com", ev.getSuggestedEmail("roc@fewlaps.com"));
+    }
+
+    @Test
+    public void shouldReturnSameEmail3(){
+        assertEquals("a@b.com", ev.getSuggestedEmail("a@b.com"));
+    }
+
+    @Test
+    public void shouldFixDotConIssue1(){
+        assertEquals("roc@rocboronat.com", ev.getSuggestedEmail("roc@rocboronat.con"));
+    }
+
+    @Test
+    public void shouldFixDotConIssue2(){
+        assertEquals("roc@fewlaps.com", ev.getSuggestedEmail("roc@fewlaps.con"));
+    }
+
+    @Test
+    public void shouldFixDotConIssue3(){
+        assertEquals("a@b.com", ev.getSuggestedEmail("a@b.con"));
+    }
+
+    @Test
+    public void shouldFixGnailIssue(){
+        assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gnail.com"));
+    }
+
+    @Test
+    public void shouldFixGnailAndConIssue(){
+        assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gnail.con"));
+    }
+
 }
