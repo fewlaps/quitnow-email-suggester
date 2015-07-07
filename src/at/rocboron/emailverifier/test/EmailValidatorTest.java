@@ -1,5 +1,6 @@
-package at.rocboron.emailverifier;
+package at.rocboron.emailverifier.test;
 
+import at.rocboron.emailverifier.EmailValidator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -153,7 +154,7 @@ public class EmailValidatorTest {
 
     @Test
     public void shouldSayKO16() {
-        assertFalse(ev.isValidEmail("“(),:;<>[\\]@example.com"));
+        assertFalse(ev.isValidEmail("ï¿½(),:;<>[\\]@example.com"));
     }
 
     @Test
@@ -166,53 +167,4 @@ public class EmailValidatorTest {
         assertFalse(ev.isValidEmail("this\\ is\"really\"not\\allowed@example.com"));
     }
 
-    @Test
-    public void shouldReturnSameEmail1() {
-        assertEquals("roc@rocboron.at", ev.getSuggestedEmail("roc@rocboron.at"));
-    }
-
-    @Test
-    public void shouldReturnSameEmail2() {
-        assertEquals("roc@fewlaps.com", ev.getSuggestedEmail("roc@fewlaps.com"));
-    }
-
-    @Test
-    public void shouldReturnSameEmail3() {
-        assertEquals("a@b.com", ev.getSuggestedEmail("a@b.com"));
-    }
-
-    @Test
-    public void shouldFixDotConIssue1() {
-        assertEquals("roc@rocboronat.com", ev.getSuggestedEmail("roc@rocboronat.con"));
-    }
-
-    @Test
-    public void shouldFixDotConIssue2() {
-        assertEquals("roc@fewlaps.com", ev.getSuggestedEmail("roc@fewlaps.con"));
-    }
-
-    @Test
-    public void shouldFixDotConIssue3() {
-        assertEquals("a@b.com", ev.getSuggestedEmail("a@b.con"));
-    }
-
-    @Test
-    public void shouldFixGnailIssue() {
-        assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gnail.com"));
-    }
-
-    @Test
-    public void shouldFixGnailAndConIssue() {
-        assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gnail.con"));
-    }
-
-    @Test
-    public void shouldFixGmialIssue() {
-        assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gmial.com"));
-    }
-
-    @Test
-    public void shouldFixGmialAndConIssue() {
-        assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gmial.con"));
-    }
 }
