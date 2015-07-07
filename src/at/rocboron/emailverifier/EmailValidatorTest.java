@@ -167,43 +167,52 @@ public class EmailValidatorTest {
     }
 
     @Test
-    public void shouldReturnSameEmail1(){
+    public void shouldReturnSameEmail1() {
         assertEquals("roc@rocboron.at", ev.getSuggestedEmail("roc@rocboron.at"));
     }
 
     @Test
-    public void shouldReturnSameEmail2(){
+    public void shouldReturnSameEmail2() {
         assertEquals("roc@fewlaps.com", ev.getSuggestedEmail("roc@fewlaps.com"));
     }
 
     @Test
-    public void shouldReturnSameEmail3(){
+    public void shouldReturnSameEmail3() {
         assertEquals("a@b.com", ev.getSuggestedEmail("a@b.com"));
     }
 
     @Test
-    public void shouldFixDotConIssue1(){
+    public void shouldFixDotConIssue1() {
         assertEquals("roc@rocboronat.com", ev.getSuggestedEmail("roc@rocboronat.con"));
     }
 
     @Test
-    public void shouldFixDotConIssue2(){
+    public void shouldFixDotConIssue2() {
         assertEquals("roc@fewlaps.com", ev.getSuggestedEmail("roc@fewlaps.con"));
     }
 
     @Test
-    public void shouldFixDotConIssue3(){
+    public void shouldFixDotConIssue3() {
         assertEquals("a@b.com", ev.getSuggestedEmail("a@b.con"));
     }
 
     @Test
-    public void shouldFixGnailIssue(){
+    public void shouldFixGnailIssue() {
         assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gnail.com"));
     }
 
     @Test
-    public void shouldFixGnailAndConIssue(){
+    public void shouldFixGnailAndConIssue() {
         assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gnail.con"));
     }
 
+    @Test
+    public void shouldFixGmialIssue() {
+        assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gmial.com"));
+    }
+
+    @Test
+    public void shouldFixGmialAndConIssue() {
+        assertEquals("roc@gmail.com", ev.getSuggestedEmail("roc@gmial.con"));
+    }
 }

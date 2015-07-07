@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 public class EmailValidator {
 
     public static final String GNAIL_FAIL = "gnail.com";
+    public static final String GMIAL_FAIL = "gmial.com";
     public static final String GMAIL = "gmail.com";
 
     public static final String DOTCON_FAIL = ".con";
@@ -26,11 +27,15 @@ public class EmailValidator {
     }
 
     public String getSuggestedEmail(String email) {
-        if (email.endsWith(DOTCON_FAIL)) {
-            email = email.substring(0, email.length() - DOTCON_FAIL.length()).concat(DOTCOM);
-        }
-        if (email.endsWith(GNAIL_FAIL)) {
-            email = email.substring(0, email.length() - GNAIL_FAIL.length()).concat(GMAIL);
+        email = fixDomainByEnd(email, DOTCON_FAIL, DOTCOM);
+        email = fixDomainByEnd(email, GNAIL_FAIL, GMAIL);
+        email = fixDomainByEnd(email, GMIAL_FAIL, GMAIL);
+        return email;
+    }
+
+    private String fixDomainByEnd(String email, String badEnd, String goodEnd) {
+        if (email.endsWith(badEnd)) {
+            email = email.substring(0, email.length() - badEnd.length()).concat(goodEnd);
         }
         return email;
     }
