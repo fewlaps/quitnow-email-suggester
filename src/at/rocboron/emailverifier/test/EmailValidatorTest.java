@@ -18,6 +18,16 @@ public class EmailValidatorTest {
     }
 
     @Test
+    public void shouldSayFalseForNull() {
+        assertFalse(ev.isValidEmail(null));
+    }
+
+    @Test
+    public void shouldSayFalseForEmpty() {
+        assertFalse(ev.isValidEmail(""));
+    }
+
+    @Test
     public void shouldSayOK1() {
         assertTrue(ev.isValidEmail("roc@rocboron.at"));
     }
