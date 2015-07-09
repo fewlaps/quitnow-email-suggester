@@ -1,5 +1,7 @@
 package at.rocboron.emailverifier;
 
+import at.rocboron.emailverifier.exception.InvalidEmailException;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -12,7 +14,11 @@ public class EmailSuggester {
     public static final String DOTCON_FAIL = ".con";
     public static final String DOTCOM = ".com";
 
-    public String getSuggestedEmail(String email) {
+    public String getSuggestedEmail(String email) throws InvalidEmailException {
+        if (email == null) {
+            throw new InvalidEmailException();
+        }
+
         email = fixDomainByEnd(email, DOTCON_FAIL, DOTCOM);
         email = fixDomainByEnd(email, GNAIL_FAIL, GMAIL);
         email = fixDomainByEnd(email, GMIAL_FAIL, GMAIL);
