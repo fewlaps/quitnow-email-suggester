@@ -115,4 +115,40 @@ public class EmailSuggestorTest {
             fail();
         }
     }
+
+    @Test
+    public void shouldFixDotCpmIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmial.cpm"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixDotCpnIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmial.cpn"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixGmailDotCoIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.co"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixYahooDotConIssue() {
+        try {
+            assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yahoo.con"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
 }
