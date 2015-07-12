@@ -12,6 +12,7 @@ public class EmailSuggester {
 
     public static final String YAHOO = "yahoo.com";
     public static final String GMAIL = "gmail.com";
+    public static final String HOTMAIL = "hotmail.com";
 
     public static final String DOTCOM = ".com";
 
@@ -19,12 +20,24 @@ public class EmailSuggester {
             new LastWordCorrection(".cpm", DOTCOM),
             new LastWordCorrection(".cpn", DOTCOM),
             new LastWordCorrection(".con", DOTCOM),
+            new LastWordCorrection(".col", DOTCOM),
+            new LastWordCorrection(".comm", DOTCOM),
             new LastWordCorrection(".co", DOTCOM),
 
             new LastWordCorrection("gnail.com", GMAIL),
             new LastWordCorrection("gmial.com", GMAIL),
             new LastWordCorrection("gmail.com", GMAIL),
+            new LastWordCorrection("gmaail.com", GMAIL),
             new LastWordCorrection("gnail.com", GMAIL),
+            new LastWordCorrection("gamil.com", GMAIL),
+            new LastWordCorrection("gmal.com", GMAIL),
+            new LastWordCorrection("ygmail.com", GMAIL),
+
+            new LastWordCorrection("hotmaail.com", HOTMAIL),
+            new LastWordCorrection("hotmal.com", HOTMAIL),
+            new LastWordCorrection("hotmai.com", HOTMAIL),
+            new LastWordCorrection("hotmali.com", HOTMAIL),
+            new LastWordCorrection("hitmail.com", HOTMAIL),
 
             new LastWordCorrection("yaboo.com", YAHOO)
     );

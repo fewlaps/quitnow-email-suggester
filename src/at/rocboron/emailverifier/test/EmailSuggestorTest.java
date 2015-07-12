@@ -144,9 +144,108 @@ public class EmailSuggestorTest {
     }
 
     @Test
+    public void shouldFixGmailDotCommIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.comm"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+     public void shouldFixGmailDotColIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.col"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixGmaailDotComIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmaail.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixGamilDotComIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gamil.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixGmalDotComIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmal.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixYgmailDotComIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@ygmail.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixHotmaiDotComIssue() {
+        try {
+            assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hotmai.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixHotmalDotComIssue() {
+        try {
+            assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hotmal.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixHotmaliDotComIssue() {
+        try {
+            assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hotmali.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixHitmailDotComIssue() {
+        try {
+            assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hitmail.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
     public void shouldFixYahooDotConIssue() {
         try {
             assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yahoo.con"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixYabooDotConIssue() {
+        try {
+            assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yaboo.con"));
         } catch (Exception e) {
             fail();
         }
