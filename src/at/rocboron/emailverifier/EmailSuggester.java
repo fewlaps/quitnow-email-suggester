@@ -22,7 +22,6 @@ public class EmailSuggester {
             new LastWordCorrection(".con", DOTCOM),
             new LastWordCorrection(".col", DOTCOM),
             new LastWordCorrection(".comm", DOTCOM),
-            new LastWordCorrection(".co", DOTCOM),
 
             new LastWordCorrection("gnail.com", GMAIL),
             new LastWordCorrection("gmial.com", GMAIL),
