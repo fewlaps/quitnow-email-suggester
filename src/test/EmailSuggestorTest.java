@@ -252,4 +252,13 @@ public class EmailSuggestorTest {
             fail();
         }
     }
+
+    @Test
+    public void shouldFixYaboDotConIssue() {
+        try {
+            assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yaho.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
 }
