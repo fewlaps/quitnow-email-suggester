@@ -56,6 +56,17 @@ public class CommonEmailsTest {
             fail();
         }
     }
+    
+    @Test
+    public void shouldBeValidAndUnsuggestedDotCo() {
+        try {
+            String email = "roc@roc.co";
+            assertTrue(ev.isValidEmail(email));
+            assertEquals(email, es.getSuggestedEmail(email));
+        } catch (Exception e) {
+            fail();
+        }
+    }
 
     @Test
     public void shouldBeValidAndUnsuggested1() {
