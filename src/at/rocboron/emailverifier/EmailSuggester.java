@@ -25,7 +25,6 @@ public class EmailSuggester {
 
             new LastWordCorrection("gnail.com", GMAIL),
             new LastWordCorrection("gmial.com", GMAIL),
-            new LastWordCorrection("gmail.com", GMAIL),
             new LastWordCorrection("gmaail.com", GMAIL),
             new LastWordCorrection("gnail.com", GMAIL),
             new LastWordCorrection("gamil.com", GMAIL),
