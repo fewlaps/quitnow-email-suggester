@@ -1,4 +1,4 @@
-package at.rocboron.emailverifier.test;
+package test;
 
 import at.rocboron.emailverifier.EmailValidator;
 import org.junit.Before;

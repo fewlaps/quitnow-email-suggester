@@ -1,8 +1,7 @@
-package at.rocboron.emailverifier.test;
+package test;
 
 import at.rocboron.emailverifier.EmailSuggester;
 import at.rocboron.emailverifier.EmailValidator;
-import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
