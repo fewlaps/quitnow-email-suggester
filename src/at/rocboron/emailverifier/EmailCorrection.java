@@ -1,10 +1,10 @@
 package at.rocboron.emailverifier;
 
-public class LastWordCorrection {
+public class EmailCorrection {
     private String badEnd;
     private String goodEnd;
 
-    public LastWordCorrection(String badEnd, String goodEnd) {
+    public EmailCorrection(String badEnd, String goodEnd) {
         this.badEnd = badEnd;
         this.goodEnd = goodEnd;
     }
