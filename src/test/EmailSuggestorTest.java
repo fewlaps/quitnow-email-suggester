@@ -236,6 +236,15 @@ public class EmailSuggestorTest {
     }
 
     @Test
+    public void shouldFixHitmailDotComIt() {
+        try {
+            assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hitmail.it"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
     public void shouldFixYahooDotConIssue() {
         try {
             assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yahoo.con"));
