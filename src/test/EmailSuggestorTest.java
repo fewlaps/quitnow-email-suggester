@@ -132,11 +132,8 @@ public class EmailSuggestorTest {
             fail();
         }
     }
-
-    /**
-     * .co is the domain for Colombia. Bad news: it cannot be replaced automatically for .com
-     */
-    @Deprecated
+    
+    @Test
     public void shouldFixGmailDotCoIssue() {
         try {
             assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.co"));
