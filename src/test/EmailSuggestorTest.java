@@ -132,6 +132,15 @@ public class EmailSuggestorTest {
             fail();
         }
     }
+
+    @Test
+    public void shouldFixGmailDotCxomIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.cxom"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
     
     @Test
     public void shouldFixGmailDotCoIssue() {
