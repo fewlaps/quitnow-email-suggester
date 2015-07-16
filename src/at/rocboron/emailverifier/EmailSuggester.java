@@ -19,7 +19,8 @@ public class EmailSuggester {
             new EmailCorrection(".con", DOTCOM),
             new EmailCorrection(".col", DOTCOM),
             new EmailCorrection(".comm", DOTCOM),
-            new EmailCorrection(".cxom", DOTCOM)
+            new EmailCorrection(".cxom", DOTCOM),
+            new EmailCorrection(".coml", DOTCOM)
     );
 
     public List<EmailCorrection> domainCorrections = Arrays.asList(

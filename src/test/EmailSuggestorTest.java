@@ -305,6 +305,15 @@ public class EmailSuggestorTest {
     }
 
     @Test
+    public void shouldFixYabooDotComlIssue() {
+        try {
+            assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yaboo.coml"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
     public void shouldFixYaboDotConIssue() {
         try {
             assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yaho.com"));
