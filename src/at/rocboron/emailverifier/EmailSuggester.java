@@ -45,7 +45,9 @@ public class EmailSuggester {
     );
 
     public List<EmailCorrection> domainAndTldCorrections = Arrays.asList(
-            new EmailCorrection("gmail.co", GMAIL + DOTCOM)
+            new EmailCorrection("gmail.co", GMAIL + DOTCOM),
+            new EmailCorrection("yahoo.om", GMAIL + DOTCOM),
+            new EmailCorrection("gmail.om", GMAIL + DOTCOM)
     );
 
     public String getSuggestedEmail(String email) throws InvalidEmailException {

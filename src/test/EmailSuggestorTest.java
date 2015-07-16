@@ -89,6 +89,15 @@ public class EmailSuggestorTest {
     }
 
     @Test
+    public void shouldFixGmailDotOmIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.om"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
     public void shouldFixGnailAndConIssue() {
         try {
             assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gnail.con"));
@@ -155,6 +164,15 @@ public class EmailSuggestorTest {
     public void shouldNotDoNothingWithYahooDotCo() {
         try {
             assertEquals("roc@yahoo.co", es.getSuggestedEmail("roc@yahoo.co"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
+    public void shouldFixYahooDotOm() {
+        try {
+            assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yahoo.om"));
         } catch (Exception e) {
             fail();
         }
