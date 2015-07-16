@@ -206,6 +206,15 @@ public class EmailSuggestorTest {
     }
 
     @Test
+    public void shouldFixGimailDotComIssue() {
+        try {
+            assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gimail.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
     public void shouldFixGmaailDotComIssue() {
         try {
             assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmaail.com"));
