@@ -30,7 +30,7 @@ public class EmailSuggester {
             new EmailCorrection("gamil", GMAIL),
             new EmailCorrection("gmal", GMAIL),
             new EmailCorrection("ygmail", GMAIL),
-            new EmailCorrection("gmail", GMAIL),
+            new EmailCorrection("gmai", GMAIL),
 
             new EmailCorrection("hotmaail", HOTMAIL),
             new EmailCorrection("hotmal", HOTMAIL),
