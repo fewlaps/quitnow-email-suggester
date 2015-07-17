@@ -12,6 +12,7 @@ public class EmailSuggester {
     public static final String HOTMAIL = "hotmail";
 
     public static final String DOTCOM = ".com";
+    public static final String DOTNET = ".net";
 
     public List<EmailCorrection> tldCorrections = Arrays.asList(
             new EmailCorrection(".cpm", DOTCOM),
@@ -20,7 +21,8 @@ public class EmailSuggester {
             new EmailCorrection(".col", DOTCOM),
             new EmailCorrection(".comm", DOTCOM),
             new EmailCorrection(".cxom", DOTCOM),
-            new EmailCorrection(".coml", DOTCOM)
+            new EmailCorrection(".coml", DOTCOM),
+            new EmailCorrection(".ney", DOTNET)
     );
 
     public List<EmailCorrection> domainCorrections = Arrays.asList(

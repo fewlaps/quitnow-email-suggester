@@ -80,6 +80,15 @@ public class EmailSuggestorTest {
     }
 
     @Test
+    public void shouldFixDotNeyIssue() {
+        try {
+            assertEquals("a@b.net", es.getSuggestedEmail("a@b.ney"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
+
+    @Test
     public void shouldFixGnailIssue() {
         try {
             assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gnail.com"));
