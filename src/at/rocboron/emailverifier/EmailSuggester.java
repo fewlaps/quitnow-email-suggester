@@ -42,6 +42,7 @@ public class EmailSuggester {
             new EmailCorrection("hotmali", HOTMAIL),
             new EmailCorrection("hitmail", HOTMAIL),
             new EmailCorrection("hotmial", HOTMAIL),
+            new EmailCorrection("hotmale", HOTMAIL),
 
             new EmailCorrection("yaho", YAHOO),
             new EmailCorrection("yaoo", YAHOO),
