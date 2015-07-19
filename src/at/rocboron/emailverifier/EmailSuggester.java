@@ -10,6 +10,7 @@ public class EmailSuggester {
     public static final String YAHOO = "yahoo";
     public static final String GMAIL = "gmail";
     public static final String HOTMAIL = "hotmail";
+    public static final String OUTLOOK = "outlook";
 
     public static final String DOTCOM = ".com";
     public static final String DOTNET = ".net";
@@ -46,7 +47,9 @@ public class EmailSuggester {
 
             new EmailCorrection("yaho", YAHOO),
             new EmailCorrection("yaoo", YAHOO),
-            new EmailCorrection("yaboo", YAHOO)
+            new EmailCorrection("yaboo", YAHOO),
+
+            new EmailCorrection("outllok", OUTLOOK)
     );
 
     public List<EmailCorrection> domainAndTldCorrections = Arrays.asList(

@@ -375,4 +375,13 @@ public class EmailSuggestorTest {
             fail();
         }
     }
+
+    @Test
+    public void shouldFixOutllokIssue() {
+        try {
+            assertEquals("roc@outlook.com", es.getSuggestedEmail("roc@outllok.com"));
+        } catch (Exception e) {
+            fail();
+        }
+    }
 }
