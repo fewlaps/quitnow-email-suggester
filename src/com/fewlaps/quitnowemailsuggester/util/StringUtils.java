@@ -1,4 +1,4 @@
-package at.rocboron.emailverifier.util;
+package com.fewlaps.quitnowemailsuggester.util;
 
 public class StringUtils {
     public String replaceLast(String text, String regex, String replacement) {

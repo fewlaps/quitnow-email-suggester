@@ -1,7 +1,7 @@
-package at.rocboron.emailverifier;
+package com.fewlaps.quitnowemailsuggester;
 
-import at.rocboron.emailverifier.exception.InvalidEmailException;
-import at.rocboron.emailverifier.util.StringUtils;
+import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
+import com.fewlaps.quitnowemailsuggester.util.StringUtils;
 
 public class EmailParts {
     public String getTld(String email) throws InvalidEmailException {

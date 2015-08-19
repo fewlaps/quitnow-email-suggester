@@ -1,6 +1,6 @@
-package at.rocboron.emailverifier;
+package com.fewlaps.quitnowemailsuggester;
 
-import at.rocboron.emailverifier.exception.InvalidEmailException;
+import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
 
 import java.util.Arrays;
 import java.util.List;

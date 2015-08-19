@@ -1,4 +1,4 @@
-package at.rocboron.emailverifier.exception;
+package com.fewlaps.quitnowemailsuggester.exception;
 
 public class InvalidEmailException extends Exception {
 }

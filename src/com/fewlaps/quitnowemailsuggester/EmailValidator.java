@@ -1,4 +1,4 @@
-package at.rocboron.emailverifier;
+package com.fewlaps.quitnowemailsuggester;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

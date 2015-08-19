@@ -1,7 +1,7 @@
 package test;
 
-import at.rocboron.emailverifier.EmailSuggester;
-import at.rocboron.emailverifier.exception.InvalidEmailException;
+import com.fewlaps.quitnowemailsuggester.EmailSuggester;
+import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
 import org.junit.Before;
 import org.junit.Test;
 

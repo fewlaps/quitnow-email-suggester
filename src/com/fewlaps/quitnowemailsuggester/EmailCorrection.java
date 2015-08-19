@@ -1,4 +1,4 @@
-package at.rocboron.emailverifier;
+package com.fewlaps.quitnowemailsuggester;
 
 public class EmailCorrection {
     private String badEnd;

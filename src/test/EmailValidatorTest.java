@@ -1,6 +1,6 @@
 package test;
 
-import at.rocboron.emailverifier.EmailValidator;
+import com.fewlaps.quitnowemailsuggester.EmailValidator;
 import org.junit.Before;
 import org.junit.Test;
 
