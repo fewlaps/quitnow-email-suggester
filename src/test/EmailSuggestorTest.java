@@ -245,4 +245,64 @@ public class EmailSuggestorTest {
     public void shouldFixOutllokIssue() throws InvalidEmailException {
         assertEquals("roc@outlook.com", es.getSuggestedEmail("roc@outllok.com"));
     }
+
+    @Test
+    public void shouldFixComaIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.coma"));
+    }
+
+    @Test
+    public void shouldFixCombIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.comb"));
+    }
+
+    @Test
+    public void shouldFixComcIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.comc"));
+    }
+
+    @Test
+    public void shouldFixComxIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.comx"));
+    }
+
+    @Test
+    public void shouldFixComyIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.comy"));
+    }
+
+    @Test
+    public void shouldFixComzIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.comz"));
+    }
+
+    @Test
+    public void shouldFixAcomIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.acom"));
+    }
+
+    @Test
+    public void shouldFixBcomIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.bcom"));
+    }
+
+    @Test
+    public void shouldFixCcomIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.ccom"));
+    }
+
+    @Test
+    public void shouldFixXcomIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.xcom"));
+    }
+
+    @Test
+    public void shouldFixYcomIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.ycom"));
+    }
+
+    @Test
+    public void shouldFixZcomIssue() throws InvalidEmailException {
+        assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.zcom"));
+    }
 }

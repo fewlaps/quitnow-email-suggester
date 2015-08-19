@@ -12,6 +12,8 @@ public class EmailSuggester {
     public static final String HOTMAIL = "hotmail";
     public static final String OUTLOOK = "outlook";
 
+    public static final String COM = "com";
+
     public static final String DOTCOM = ".com";
     public static final String DOTNET = ".net";
 
@@ -63,6 +65,7 @@ public class EmailSuggester {
             throw new InvalidEmailException();
         }
 
+        email = fixComWithAnotherChar(email);
         for (EmailCorrection correction : tldCorrections) {
             email = fixTld(email, correction.getBadEnd(), correction.getGoodEnd());
         }
@@ -74,6 +77,16 @@ public class EmailSuggester {
         }
 
         return email;
+    }
+
+    private String fixComWithAnotherChar(String email) throws InvalidEmailException {
+        EmailParts ep = new EmailParts();
+        String tld = ep.getTld(email);
+        if (tld.contains(COM) && tld.length() == COM.length()+1) {//if it's coma, comb, comc, acom, bcom, ccom...
+            return fixTld(email, tld, COM);
+        } else {
+            return email;
+        }
     }
 
     private String fixTld(String email, String badTld, String goodTld) {
