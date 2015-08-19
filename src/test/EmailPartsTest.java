@@ -16,91 +16,55 @@ public class EmailPartsTest {
     EmailParts ep;
 
     @Before
-    public void init() {
+    public void init() throws InvalidEmailException {
         ep = new EmailParts();
     }
 
     @Test
-    public void shouldReturnCom() {
-        try {
-            assertEquals("com", ep.getTld("roc@fewlaps.com"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnCom() throws InvalidEmailException {
+        assertEquals("com", ep.getTld("roc@fewlaps.com"));
     }
 
     @Test
-    public void shouldReturnAt() {
-        try {
-            assertEquals("at", ep.getTld("roc@rocboron.at"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnAt() throws InvalidEmailException {
+        assertEquals("at", ep.getTld("roc@rocboron.at"));
     }
 
     @Test
-    public void shouldReturnComDotUk() {
-        try {
-            assertEquals("co.uk", ep.getTld("roc@fewlaps.co.uk"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnComDotUk() throws InvalidEmailException {
+        assertEquals("co.uk", ep.getTld("roc@fewlaps.co.uk"));
     }
 
     @Test
-    public void shouldReturnFewlapsDotCom() {
-        try {
-            assertEquals("fewlaps.com", ep.getDomain("roc@fewlaps.com"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnFewlapsDotCom() throws InvalidEmailException {
+        assertEquals("fewlaps.com", ep.getDomain("roc@fewlaps.com"));
     }
 
     @Test
-    public void shouldReturnFewlapsDotCoDotUk() {
-        try {
-            assertEquals("fewlaps.co.uk", ep.getDomain("roc@fewlaps.co.uk"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnFewlapsDotCoDotUk() throws InvalidEmailException {
+        assertEquals("fewlaps.co.uk", ep.getDomain("roc@fewlaps.co.uk"));
     }
 
     @Test
-    public void shouldReturnFewlaps() {
-        try {
-            assertEquals("fewlaps", ep.getDomainWithoutTld("roc@fewlaps.co.uk"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnFewlaps() throws InvalidEmailException {
+        assertEquals("fewlaps", ep.getDomainWithoutTld("roc@fewlaps.co.uk"));
     }
 
     @Test
-    public void shouldReturnRocboron() {
-        try {
-            assertEquals("rocboron", ep.getDomainWithoutTld("roc@rocboron.at"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnRocboron() throws InvalidEmailException {
+        assertEquals("rocboron", ep.getDomainWithoutTld("roc@rocboron.at"));
     }
 
     @Test
-    public void shouldReturnGmail() {
-        try {
-            assertEquals("gmail", ep.getDomainWithoutTld("roc@gmail.com"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnGmail() throws InvalidEmailException {
+        assertEquals("gmail", ep.getDomainWithoutTld("roc@gmail.com"));
     }
 
     /**
      * Key test with IT, 'cause "hitmail" contains "it", the TLD
      */
     @Test
-    public void shouldReturnHitmail() {
-        try {
-            assertEquals("hitmail", ep.getDomainWithoutTld("roc@hitmail.it"));
-        } catch (InvalidEmailException e) {
-            fail();
-        }
+    public void shouldReturnHitmail() throws InvalidEmailException {
+        assertEquals("hitmail", ep.getDomainWithoutTld("roc@hitmail.it"));
     }
 }
