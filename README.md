@@ -35,3 +35,11 @@ compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3'
     <version>1.3</version>
 </dependency>
 ```
+
+Use the API
+-----------
+
+There's also an open source project that works with this algorithm. Check it and star it!
+
+[QuitNow!'s e-mail suggester API](https://github.com/Fewlaps/quitnow-email-suggester-api)
+
