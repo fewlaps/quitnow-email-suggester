@@ -1,0 +1,31 @@
+group 'com.fewlaps.quitnowemailsuggester'
+version '1.2'
+
+apply plugin: 'java'
+apply plugin: 'com.novoda.bintray-release'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.3.4'
+    }
+}
+
+publish {
+    userOrg = 'fewlaps'
+    groupId = 'quitnow-email-suggester'
+    artifactId = 'com.fewlaps.quitnowemailsuggester'
+    publishVersion = '1.2'
+    desc = ''
+    website = 'https://github.com/Fewlaps/quitnow-email-suggester'
+}
