@@ -13,7 +13,8 @@ import static org.junit.Assert.assertTrue;
 /**
  * This will use the most common e-mails, testing that they are valid and the suggested emails are not different as the sent ones
  */
-public class CommonEmailsTest {
+public class GoodEmailsText {
+
 
     EmailSuggester es;
     EmailValidator ev;
@@ -191,4 +192,13 @@ public class CommonEmailsTest {
         assertTrue(ev.isValidEmail(email));
         assertEquals(email, es.getSuggestedEmail(email));
     }
+
+    @Test
+    public void shouldBeValidAndUnsuggested21() throws InvalidEmailException {
+        String email = "fewlaps@something.com.pe";
+        assertTrue(ev.isValidEmail(email));
+        assertEquals(email, es.getSuggestedEmail(email));
+    }
+
+
 }
