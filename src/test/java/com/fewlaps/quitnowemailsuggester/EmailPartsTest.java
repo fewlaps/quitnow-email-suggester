@@ -1,14 +1,10 @@
-package test;
+package com.fewlaps.quitnowemailsuggester;
 
-import com.fewlaps.quitnowemailsuggester.EmailParts;
 import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
 import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.fail;
-import static junit.framework.TestCase.assertTrue;
 
 public class EmailPartsTest {
 

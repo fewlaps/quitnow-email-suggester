@@ -1,11 +1,9 @@
-package test;
+package com.fewlaps.quitnowemailsuggester;
 
-import com.fewlaps.quitnowemailsuggester.EmailValidator;
 import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertFalse;
-import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
 public class EmailValidatorTest {

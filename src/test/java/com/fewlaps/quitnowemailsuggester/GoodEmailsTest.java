@@ -1,20 +1,16 @@
-package test;
+package com.fewlaps.quitnowemailsuggester;
 
-import com.fewlaps.quitnowemailsuggester.EmailSuggester;
-import com.fewlaps.quitnowemailsuggester.EmailValidator;
 import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
 import org.junit.Before;
 import org.junit.Test;
 
-import static junit.framework.TestCase.fail;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
  * This will use the most common e-mails, testing that they are valid and the suggested emails are not different as the sent ones
  */
-public class GoodEmailsText {
-
+public class GoodEmailsTest {
 
     EmailSuggester es;
     EmailValidator ev;
@@ -199,6 +195,4 @@ public class GoodEmailsText {
         assertTrue(ev.isValidEmail(email));
         assertEquals(email, es.getSuggestedEmail(email));
     }
-
-
 }
