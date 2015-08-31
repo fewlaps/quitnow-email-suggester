@@ -10,3 +10,28 @@ Incidentally, it will be useful if we improve our e-mail validation (and, hopefu
 If you want to see what suggestions and validations are being done, <a href="https://github.com/Fewlaps/quitnow-email-suggester/tree/master/src/test/java/com/fewlaps/quitnowemailsuggester">check the actual tests</a>. It's an easy way for us to document the behaviour, and it's the tried-and-true list for you to know what's exactly happening here.
 
 Don't hesitate to add some issues and good (failing) tests! And, of course, if you want to contribute to the project with new features, it will be really appreciated :·)
+
+Download
+--------
+
+Get <a href="https://github.com/Fewlaps/quitnow-email-suggester/releases/download/v1.2/quitnow-email-suggester-1.2.jar">the last .jar</a> 
+
+Grab via Gradle:
+```groovy
+repositories { maven { url "http://dl.bintray.com/fewlaps/maven/" } }
+    
+compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.2'
+```
+Grab via Maven:
+```xml
+<repository>
+  <id>fewlaps</id>
+  <url>http://dl.bintray.com/fewlaps/maven/</url>
+</repository>
+
+<dependency>
+  <groupId>com.fewlaps.quitnowemailsuggester</groupId>
+  <artifactId>quitnow-email-suggester</artifactId>
+  <version>1.2</version>
+</dependency>
+```
