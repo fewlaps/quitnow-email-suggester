@@ -14,25 +14,25 @@ Don't hesitate to add some issues and good (failing) tests! And, of course, if y
 Download
 --------
 
-* Get <a href="https://github.com/Fewlaps/quitnow-email-suggester/releases/download/v1.3/quitnow-email-suggester-1.3.jar">the last .jar</a> 
+* Get <a href="https://github.com/Fewlaps/quitnow-email-suggester/releases/download/v1.3.1/quitnow-email-suggester-1.3.1.jar">the last .jar</a> 
 
 * Grab via Gradle:
 ```groovy
-repositories { maven { url "http://dl.bintray.com/fewlaps/maven/" } }
+repositories { jcenter() } }
     
-compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3'
+compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3.1'
 ```
 * Grab via Maven:
 ```xml
 <repository>
-  <id>fewlaps</id>
-  <url>http://dl.bintray.com/fewlaps/maven/</url>
+  <id>jcenter</id>
+  <url>http://jcenter.bintray.com</url>
 </repository>
 
 <dependency>
     <groupId>com.fewlaps.quitnowemailsuggester</groupId>
     <artifactId>quitnow-email-suggester</artifactId>
-    <version>1.3</version>
+    <version>1.3.1</version>
 </dependency>
 ```
 
