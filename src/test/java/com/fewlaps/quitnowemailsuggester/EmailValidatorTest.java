@@ -117,17 +117,17 @@ public class EmailValidatorTest {
 
     @Test
     public void shouldSayKO7() {
-        assertFalse(ev.isValidEmail(".email@example.com"));
+        assertTrue(ev.isValidEmail(".email@example.com"));
     }
 
     @Test
     public void shouldSayKO8() {
-        assertFalse(ev.isValidEmail("email.@example.com"));
+        assertTrue(ev.isValidEmail("email.@example.com"));
     }
 
     @Test
     public void shouldSayKO9() {
-        assertFalse(ev.isValidEmail("email..email@example.com"));
+        assertTrue(ev.isValidEmail("email..email@example.com"));
     }
 
     @Test
@@ -147,7 +147,7 @@ public class EmailValidatorTest {
 
     @Test
     public void shouldSayKO13() {
-        assertFalse(ev.isValidEmail("email@111.222.333.44444"));
+        assertTrue(ev.isValidEmail("email@111.222.333.44444"));
     }
 
     @Test
@@ -157,7 +157,7 @@ public class EmailValidatorTest {
 
     @Test
     public void shouldSayKO15() {
-        assertFalse(ev.isValidEmail("Abc..123@example.com"));
+        assertTrue(ev.isValidEmail("Abc..123@example.com"));
     }
 
     @Test
