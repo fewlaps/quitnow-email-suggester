@@ -175,4 +175,32 @@ public class EmailValidatorTest {
         assertFalse(ev.isValidEmail("this\\ is\"really\"not\\allowed@example.com"));
     }
 
+    // Alias Email tests
+
+    @Test
+    public void aliasTest01(){
+        assertTrue(ev.isAliasEmail("alias+test@example.com"));
+    }
+
+    @Test
+    public void aliasTest02(){
+        assertTrue(ev.isAliasEmail("alias+test+me@example.com"));
+    }
+
+    @Test
+    public void aliasTest03(){
+        assertTrue(ev.isAliasEmail("alias+e@example.com"));
+    }
+
+    @Test
+    public void aliasTest04(){
+        assertFalse(ev.isAliasEmail("alias@example.com"));
+    }
+
+    @Test
+    public void aliasTest05(){
+        assertFalse(ev.isAliasEmail("alias+me@.example.com"));
+    }
+
+
 }
