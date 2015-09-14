@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Fewlaps/quitnow-email-suggester.svg?branch=master)](https://travis-ci.org/Fewlaps/quitnow-email-suggester.svg?branch=master)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-quitnow--email--suggester-green.svg?style=flat)](https://android-arsenal.com/details/1/2465)
+
 # [QuitNow!](http://quitnowapp.com)'s e-mail suggester
 People don't write e-mail addresses without misspelling from time to time. @gmial.con addresses are too common... And we need to put a stop to it!
 
