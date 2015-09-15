@@ -5,13 +5,24 @@ import java.util.regex.Pattern;
 
 public class EmailValidator {
 
-    private Pattern pattern;
+    private Pattern emailPattern;
+    private Pattern aliasPattern;
     private Matcher matcher;
 
-    private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+    private static final String EMAIL_PATTERN =
+            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
+            "\\@" +
+            "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
+            "(" +
+                "\\." +
+                "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
+            ")+";
+
+    private static final String ALIAS_PATTERN = "([^\\s]+(\\+([\\w])*@))";
 
     public EmailValidator() {
-        pattern = Pattern.compile(EMAIL_PATTERN);
+        emailPattern = Pattern.compile(EMAIL_PATTERN);
+        aliasPattern = Pattern.compile(ALIAS_PATTERN);
     }
 
     public boolean isValidEmail(String email) {
@@ -19,7 +30,12 @@ public class EmailValidator {
             return false;
         }
 
-        matcher = pattern.matcher(email);
+        matcher = emailPattern.matcher(email);
         return matcher.matches();
+    }
+
+    //TODO: Write tests
+    public boolean isAliasEmail(String email){
+        return isValidEmail(email) && aliasPattern.matcher(email).find();
     }
 }
