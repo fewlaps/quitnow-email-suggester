@@ -9,4 +9,4 @@ before_install:
  - chmod +x gradlew
 
 after_success:
- - coveralls
+ - ./gradlew cobertura coveralls
