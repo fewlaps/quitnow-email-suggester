@@ -38,3 +38,5 @@ publish {
     desc = ''
     website = 'https://github.com/Fewlaps/quitnow-email-suggester'
 }
+
+cobertura.coverageFormats = ['html', 'xml'] // coveralls plugin depends on xml format report
