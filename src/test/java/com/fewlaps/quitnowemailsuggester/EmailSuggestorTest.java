@@ -301,4 +301,9 @@ public class EmailSuggestorTest {
     public void shouldFixZcomIssue() throws InvalidEmailException {
         assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.zcom"));
     }
+
+    @Test
+    public void shouldFixNteIssue() throws InvalidEmailException {
+        assertEquals("roc@rocboronat.net", es.getSuggestedEmail("roc@rocboronat.nte"));
+    }
 }
