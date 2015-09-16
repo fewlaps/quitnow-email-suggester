@@ -52,6 +52,6 @@ public class StringAlphanumericValidatorTest {
 
     @Test
     public void shouldReturnFalseForTextWithSymbols5() {
-        assertFalse(sv.isAlphanumeric("CAFEBABE!·$%&/)"));
+        assertFalse(sv.isAlphanumeric("CAFEBABE!?$%&/)"));
     }
 }
