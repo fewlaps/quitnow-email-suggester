@@ -1,8 +1,7 @@
 package com.fewlaps.quitnowemailsuggester.util;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
