@@ -9,23 +9,26 @@ import java.util.Scanner;
  * Created by edgeorge on 15/09/15.
  */
 public class SuffixUtils {
-    private final String FILE_LOCATION = "../resources/list/public_suffix_list.dat";
+    private final String FILE_LOCATION = "list/public_suffix_list.dat";
 
 
-    public Scanner getFileScanner(){
+    public Scanner getFileScanner() {
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource(FILE_LOCATION).getFile());
+
         try {
-            return new Scanner(new File(FILE_LOCATION));
+            return new Scanner(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         return null;
     }
 
-    public boolean isValidSuffix(String suffix){
+    public boolean isValidSuffix(String suffix) {
         Scanner scanner = getFileScanner();
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            if(line.equals(suffix)){
+            if (line.equals(suffix)) {
                 return true;
             }
         }
