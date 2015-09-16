@@ -15,7 +15,7 @@ public class StringValidator {
     public boolean isAlphanumeric(String text) {
         for (int i=0; i < text.length(); i++) {
             char c = text.charAt(i);
-            if (!Character.isDigit(c) && !Character.isLetter(c))
+            if (!Character.isLetterOrDigit(c))
                 return false;
         }
         return true;
