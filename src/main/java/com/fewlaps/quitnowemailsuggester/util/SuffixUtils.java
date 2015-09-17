@@ -25,13 +25,17 @@ public class SuffixUtils {
 
     public boolean isValidSuffix(String suffix) {
         Scanner scanner = getFileScanner();
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            if (line.equals(suffix)) {
-                return true;
+        try {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                if (line.equals(suffix)) {
+                    return true;
+                }
             }
+            return false;
+        }finally {
+            scanner.close();
         }
-        return false;
     }
 
 
