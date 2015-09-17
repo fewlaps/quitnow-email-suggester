@@ -2,6 +2,7 @@
 [![Coverage Status](https://coveralls.io/repos/Fewlaps/quitnow-email-suggester/badge.svg?branch=master&service=github)](https://coveralls.io/github/Fewlaps/quitnow-email-suggester?branch=master)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-quitnow--email--suggester-green.svg?style=flat)](https://android-arsenal.com/details/1/2465)
 [![Download](https://api.bintray.com/packages/fewlaps/maven/quitnow-email-suggester/images/download.svg) ](https://bintray.com/fewlaps/maven/quitnow-email-suggester/_latestVersion)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Fewlaps/quitnow-email-suggester?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # [QuitNow!](http://quitnowapp.com)'s e-mail suggester
 People don't write e-mail addresses without misspelling from time to time. @gmial.con addresses are too common... And we need to put a stop to it!
