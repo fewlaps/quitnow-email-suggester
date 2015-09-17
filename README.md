@@ -4,6 +4,8 @@
 [![Download](https://api.bintray.com/packages/fewlaps/maven/quitnow-email-suggester/images/download.svg) ](https://bintray.com/fewlaps/maven/quitnow-email-suggester/_latestVersion)
 
 # [QuitNow!](http://quitnowapp.com)'s e-mail suggester
+
+[![Join the chat at https://gitter.im/Fewlaps/quitnow-email-suggester](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Fewlaps/quitnow-email-suggester?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 People don't write e-mail addresses without misspelling from time to time. @gmial.con addresses are too common... And we need to put a stop to it!
 
 QuitNow!'s server is doing the usual e-mail validaton during user creation time. We're doing it like everyone does: sending an e-mail to the user, and waiting for the user to click a link. The only validation we do is to check the e-mail with usual regex... but we need to go a little beyond that. Looking for *.CON* and suggesting *.COM* is something that would make the world a better place!
