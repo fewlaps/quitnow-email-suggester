@@ -11,7 +11,7 @@ public class EmailSuggestorTest {
     EmailSuggester es;
 
     @Before
-    public void init() throws InvalidEmailException {
+    public void init() {
         es = new EmailSuggester();
     }
 

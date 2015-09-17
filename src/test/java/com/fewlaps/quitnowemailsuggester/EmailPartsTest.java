@@ -11,7 +11,7 @@ public class EmailPartsTest {
     EmailParts ep;
 
     @Before
-    public void init() throws InvalidEmailException {
+    public void init() {
         ep = new EmailParts();
     }
 
