@@ -24,7 +24,7 @@ Download
 
 * Grab via Gradle:
 ```groovy
-repositories { jcenter() } }
+repositories { jcenter() }
     
 compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3.3'
 ```
