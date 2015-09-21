@@ -24,6 +24,10 @@ public class SuffixUtils {
     }
 
     public boolean isValidSuffix(String suffix) {
+
+        if(suffix == null || suffix.isEmpty())
+            return false;
+
         Scanner scanner = getFileScanner();
         try {
             while (scanner.hasNextLine()) {
@@ -37,6 +41,5 @@ public class SuffixUtils {
             scanner.close();
         }
     }
-
 
 }

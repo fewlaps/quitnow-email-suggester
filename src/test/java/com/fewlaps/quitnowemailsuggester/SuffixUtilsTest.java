@@ -39,5 +39,15 @@ public class SuffixUtilsTest {
         assertFalse(su.isValidSuffix("con"));
     }
 
+    @Test
+    public void checkValidSuffix04(){
+        assertFalse(su.isValidSuffix(""));
+    }
+
+    @Test
+    public void checkValidSuffix05(){
+        assertFalse(su.isValidSuffix(null));
+    }
+
 
 }
