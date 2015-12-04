@@ -16,6 +16,7 @@ public class EmailSuggester {
 
     public static final String DOTCOM = ".com";
     public static final String DOTNET = ".net";
+    public static final String DOTFR = ".fr";
 
     public List<EmailCorrection> tldCorrections = Arrays.asList(
             new EmailCorrection(".cpm", DOTCOM),
@@ -25,7 +26,9 @@ public class EmailSuggester {
             new EmailCorrection(".comm", DOTCOM),
             new EmailCorrection(".cxom", DOTCOM),
             new EmailCorrection(".coml", DOTCOM),
-            new EmailCorrection(".ney", DOTNET)
+            new EmailCorrection(".ney", DOTNET),
+            new EmailCorrection(".nte", DOTNET),
+            new EmailCorrection(".ft", DOTFR)
     );
 
     public List<EmailCorrection> domainCorrections = Arrays.asList(
@@ -38,6 +41,7 @@ public class EmailSuggester {
             new EmailCorrection("ygmail", GMAIL),
             new EmailCorrection("gmai", GMAIL),
             new EmailCorrection("gimail", GMAIL),
+            new EmailCorrection("gmaik", GMAIL),
 
             new EmailCorrection("hotmaail", HOTMAIL),
             new EmailCorrection("hotmal", HOTMAIL),
@@ -47,12 +51,16 @@ public class EmailSuggester {
             new EmailCorrection("hotmial", HOTMAIL),
             new EmailCorrection("hotmale", HOTMAIL),
             new EmailCorrection("homtail", HOTMAIL),
+            new EmailCorrection("hotnail", HOTMAIL),
+            new EmailCorrection("hormail", HOTMAIL),
 
             new EmailCorrection("yaho", YAHOO),
             new EmailCorrection("yaoo", YAHOO),
             new EmailCorrection("yaboo", YAHOO),
+            new EmailCorrection("yahou", YAHOO),
 
-            new EmailCorrection("outllok", OUTLOOK)
+            new EmailCorrection("outllok", OUTLOOK),
+            new EmailCorrection("outilook", OUTLOOK)
     );
 
     public List<EmailCorrection> domainAndTldCorrections = Arrays.asList(

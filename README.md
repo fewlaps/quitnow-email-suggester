@@ -1,3 +1,9 @@
+[![Build Status](https://travis-ci.org/Fewlaps/quitnow-email-suggester.svg?branch=master)](https://travis-ci.org/Fewlaps/quitnow-email-suggester)
+[![Coverage Status](https://coveralls.io/repos/Fewlaps/quitnow-email-suggester/badge.svg?branch=master&service=github)](https://coveralls.io/github/Fewlaps/quitnow-email-suggester?branch=master)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-quitnow--email--suggester-green.svg?style=flat)](https://android-arsenal.com/details/1/2465)
+[![Download](https://api.bintray.com/packages/fewlaps/maven/quitnow-email-suggester/images/download.svg) ](https://bintray.com/fewlaps/maven/quitnow-email-suggester/_latestVersion)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Fewlaps/quitnow-email-suggester?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 # [QuitNow!](http://quitnowapp.com)'s e-mail suggester
 People don't write e-mail addresses without misspelling from time to time. @gmial.con addresses are too common... And we need to put a stop to it!
 
@@ -14,13 +20,13 @@ Don't hesitate to add some issues and good (failing) tests! And, of course, if y
 Download
 --------
 
-* Get <a href="https://github.com/Fewlaps/quitnow-email-suggester/releases/download/v1.3.2/quitnow-email-suggester-1.3.2.jar">the last .jar</a> 
+* Get <a href="https://github.com/Fewlaps/quitnow-email-suggester/releases/download/v1.3.4/quitnow-email-suggester-1.3.4.jar">the last .jar</a> 
 
 * Grab via Gradle:
 ```groovy
-repositories { jcenter() } }
+repositories { jcenter() }
     
-compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3.2'
+compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3.4'
 ```
 * Grab via Maven:
 ```xml
@@ -32,7 +38,7 @@ compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3.2'
 <dependency>
     <groupId>com.fewlaps.quitnowemailsuggester</groupId>
     <artifactId>quitnow-email-suggester</artifactId>
-    <version>1.3.2</version>
+    <version>1.3.4</version>
 </dependency>
 ```
 
@@ -43,3 +49,28 @@ There's also an open source project that works with this algorithm. Check it and
 
 [QuitNow!'s e-mail suggester API](https://github.com/Fewlaps/quitnow-email-suggester-api)
 
+
+
+## LICENSE ##
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Fewlaps
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

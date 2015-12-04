@@ -13,15 +13,7 @@ public class EmailCorrection {
         return badEnd;
     }
 
-    public void setBadEnd(String badEnd) {
-        this.badEnd = badEnd;
-    }
-
     public String getGoodEnd() {
         return goodEnd;
-    }
-
-    public void setGoodEnd(String goodEnd) {
-        this.goodEnd = goodEnd;
     }
 }

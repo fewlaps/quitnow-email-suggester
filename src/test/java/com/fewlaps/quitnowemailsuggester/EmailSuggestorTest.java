@@ -11,7 +11,7 @@ public class EmailSuggestorTest {
     EmailSuggester es;
 
     @Before
-    public void init() throws InvalidEmailException {
+    public void init() {
         es = new EmailSuggester();
     }
 
@@ -300,5 +300,45 @@ public class EmailSuggestorTest {
     @Test
     public void shouldFixZcomIssue() throws InvalidEmailException {
         assertEquals("roc@fewlaps.com", es.getSuggestedEmail("roc@fewlaps.zcom"));
+    }
+
+    @Test
+    public void shouldFixNteIssue() throws InvalidEmailException {
+        assertEquals("roc@rocboronat.net", es.getSuggestedEmail("roc@rocboronat.nte"));
+    }
+
+    @Test
+    public void shouldFixOutilookDotCom() throws InvalidEmailException {
+        assertEquals("roc@outlook.com", es.getSuggestedEmail("roc@outilook.com"));
+    }
+
+    @Test
+    public void shouldFixGmailDotComu() throws InvalidEmailException {
+        assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.comu"));
+    }
+
+    @Test
+    public void shouldFixHotnailDotCom() throws InvalidEmailException {
+        assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hotnail.com"));
+    }
+
+    @Test
+    public void shouldFixHormailDotCom() throws InvalidEmailException {
+        assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hormail.com"));
+    }
+
+    @Test
+    public void shouldReplaceFtToFr() throws InvalidEmailException {
+        assertEquals("roc@hotmail.fr", es.getSuggestedEmail("roc@hotmail.ft"));
+    }
+
+    @Test
+    public void shouldFixGmaikDotCom() throws InvalidEmailException {
+        assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmaik.com"));
+    }
+
+    @Test
+    public void shouldFixYahou() throws InvalidEmailException {
+        assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yahou.com"));
     }
 }

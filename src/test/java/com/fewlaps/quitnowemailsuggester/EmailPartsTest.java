@@ -11,7 +11,7 @@ public class EmailPartsTest {
     EmailParts ep;
 
     @Before
-    public void init() throws InvalidEmailException {
+    public void init() {
         ep = new EmailParts();
     }
 
@@ -61,5 +61,59 @@ public class EmailPartsTest {
     @Test
     public void shouldReturnHitmail() throws InvalidEmailException {
         assertEquals("hitmail", ep.getDomainWithoutTld("roc@hitmail.it"));
+    }
+
+    @Test
+    public void shouldLaunchAnInvalidEmailExceptionForNullAtGetTld() throws InvalidEmailException {
+        try {
+            ep.getTld(null);
+        } catch (InvalidEmailException e) {
+            return; //This is what we expect
+        }
+    }
+
+    @Test
+    public void shouldLaunchAnInvalidEmailExceptionForNopeAtGetTld() throws InvalidEmailException {
+        try {
+            ep.getTld("nope");
+        } catch (InvalidEmailException e) {
+            return; //This is what we expect
+        }
+    }
+
+    @Test
+    public void shouldLaunchAnInvalidEmailExceptionForNullAtGetDomain() throws InvalidEmailException {
+        try {
+            ep.getDomain(null);
+        } catch (InvalidEmailException e) {
+            return; //This is what we expect
+        }
+    }
+
+    @Test
+    public void shouldLaunchAnInvalidEmailExceptionForNopeAtGetDomain() throws InvalidEmailException {
+        try {
+            ep.getDomain("nope");
+        } catch (InvalidEmailException e) {
+            return; //This is what we expect
+        }
+    }
+
+    @Test
+    public void shouldLaunchAnInvalidEmailExceptionForNullAtGetDomainWoTld() throws InvalidEmailException {
+        try {
+            ep.getDomainWithoutTld(null);
+        } catch (InvalidEmailException e) {
+            return; //This is what we expect
+        }
+    }
+
+    @Test
+    public void shouldLaunchAnInvalidEmailExceptionForNopeAtGetDomainWoTld() throws InvalidEmailException {
+        try {
+            ep.getDomainWithoutTld("nope");
+        } catch (InvalidEmailException e) {
+            return; //This is what we expect
+        }
     }
 }
