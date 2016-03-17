@@ -341,4 +341,19 @@ public class EmailSuggestorTest {
     public void shouldFixYahou() throws InvalidEmailException {
         assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yahou.com"));
     }
+
+    @Test
+    public void shouldNotFix() throws InvalidEmailException {
+        assertEquals("roc@lalal.com", es.getSuggestedEmail("roc@lalal.com"));
+    }
+
+    @Test
+    public void shouldNotFixWithSeparator() throws InvalidEmailException {
+        assertEquals("roc@lalal.com", es.getSuggestedEmail("roc@lalal.com:sometext"));
+    }
+
+    @Test
+    public void shouldReturnTheSameWhenNoValidEmailWithSeparator() throws InvalidEmailException {
+        assertEquals("lalal.com:sometext", es.getSuggestedEmail("lalal.com:sometext"));
+    }
 }

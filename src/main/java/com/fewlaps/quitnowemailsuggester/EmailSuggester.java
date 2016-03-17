@@ -1,6 +1,7 @@
 package com.fewlaps.quitnowemailsuggester;
 
 import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
+import com.fewlaps.quitnowemailsuggester.util.StringUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -69,22 +70,34 @@ public class EmailSuggester {
             new EmailCorrection("gmail.om", GMAIL + DOTCOM)
     );
 
+    private EmailValidator ev = new EmailValidator();
+    private StringUtils su = new StringUtils();
+
     public String getSuggestedEmail(String email) throws InvalidEmailException {
+        return getSuggestedEmail(email, StringUtils.DEFAULT_SEPARATOR);
+    }
+
+    public String getSuggestedEmail(String email, String separator) throws InvalidEmailException {
         if (email == null) {
             throw new InvalidEmailException();
         }
 
-        email = fixComWithAnotherChar(email);
-        for (EmailCorrection correction : tldCorrections) {
-            email = fixTld(email, correction.getBadEnd(), correction.getGoodEnd());
+        String[] parts = su.getParts(email, separator);
+        for (String part : parts) {
+            if (ev.isValidEmail(part)) {
+                email = fixComWithAnotherChar(part);
+                for (EmailCorrection correction : tldCorrections) {
+                    email = fixTld(email, correction.getBadEnd(), correction.getGoodEnd());
+                }
+                for (EmailCorrection correction : domainCorrections) {
+                    email = fixDomain(email, correction.getBadEnd(), correction.getGoodEnd());
+                }
+                for (EmailCorrection correction : domainAndTldCorrections) {
+                    email = fixDomainAndTld(email, correction.getBadEnd(), correction.getGoodEnd());
+                }
+                return email;
+            }
         }
-        for (EmailCorrection correction : domainCorrections) {
-            email = fixDomain(email, correction.getBadEnd(), correction.getGoodEnd());
-        }
-        for (EmailCorrection correction : domainAndTldCorrections) {
-            email = fixDomainAndTld(email, correction.getBadEnd(), correction.getGoodEnd());
-        }
-
         return email;
     }
 
