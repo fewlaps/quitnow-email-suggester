@@ -1,8 +1,8 @@
 package com.fewlaps.quitnowemailsuggester;
 
 public class EmailCorrection {
-    private String badEnd;
-    private String goodEnd;
+    private final String badEnd;
+    private final String goodEnd;
 
     public EmailCorrection(String badEnd, String goodEnd) {
         this.badEnd = badEnd;

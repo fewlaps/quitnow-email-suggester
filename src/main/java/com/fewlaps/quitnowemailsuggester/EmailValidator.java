@@ -5,8 +5,8 @@ import java.util.regex.Pattern;
 
 public class EmailValidator {
 
-    private Pattern emailPattern;
-    private Pattern aliasPattern;
+    private final Pattern emailPattern;
+    private final Pattern aliasPattern;
     private Matcher matcher;
 
     private static final String EMAIL_PATTERN =
