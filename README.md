@@ -55,15 +55,11 @@ EmailValidator ev = new EmailValidator();
 
 Check if email is valid, or is alias
 
-return | code
----|---
-true | `ev.isValidEmail("firstname.lastname@example.com");`
-false | `ev.isValidEmail("Abc..123@example.com");`
+`ev.isValidEmail("firstname.lastname@example.com");` -> `true`
+`ev.isValidEmail("Abc..123@example.com");` -> `false`
 
-return | code
----|---
-| true | `ev.isAliasEmail("alias+test@example.com");` |
-| false | `ev.isAliasEmail("alias@example.com");` |
+`ev.isAliasEmail("alias+test@example.com");` -> true
+`ev.isAliasEmail("alias@example.com");` -> false
 
 ---
 
