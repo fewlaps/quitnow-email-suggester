@@ -34,7 +34,6 @@ public class EmailValidator {
         return matcher.matches();
     }
 
-    //TODO: Write tests
     public boolean isAliasEmail(String email){
         return isValidEmail(email) && aliasPattern.matcher(email).find();
     }
