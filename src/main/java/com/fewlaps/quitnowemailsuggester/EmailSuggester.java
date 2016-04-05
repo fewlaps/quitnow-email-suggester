@@ -1,5 +1,6 @@
 package com.fewlaps.quitnowemailsuggester;
 
+import com.fewlaps.quitnowemailsuggester.bean.EmailCorrection;
 import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
 
 import java.util.Arrays;
@@ -89,9 +90,9 @@ public class EmailSuggester {
     }
 
     private String fixComWithAnotherChar(String email) throws InvalidEmailException {
-        EmailParts ep = new EmailParts();
+        EmailPartsSplitter ep = new EmailPartsSplitter();
         String tld = ep.getTld(email);
-        if (tld.contains(COM) && tld.length() == COM.length()+1) {//if it's coma, comb, comc, acom, bcom, ccom...
+        if (tld.contains(COM) && tld.length() == COM.length() + 1) {//if it's coma, comb, comc, acom, bcom, ccom...
             return fixTld(email, tld, COM);
         } else {
             return email;
@@ -106,7 +107,7 @@ public class EmailSuggester {
     }
 
     private String fixDomain(String email, String badDomain, String goodDomain) throws InvalidEmailException {
-        EmailParts ep = new EmailParts();
+        EmailPartsSplitter ep = new EmailPartsSplitter();
         String domain = ep.getDomainWithoutTld(email);
         if (domain.equals(badDomain)) {
             email = email.replaceAll(domain, goodDomain);

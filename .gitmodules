@@ -1,0 +1,6 @@
+[submodule "src/main/resources/list"]
+	path = src/main/resources/list
+	url = https://github.com/publicsuffix/list.git
+[submodule "src/main/resources/disposables"]
+	path = src/main/resources/disposables
+	url = https://github.com/ivolo/disposable-email-domains

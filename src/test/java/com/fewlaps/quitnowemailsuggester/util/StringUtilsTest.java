@@ -1,6 +1,5 @@
-package com.fewlaps.quitnowemailsuggester;
+package com.fewlaps.quitnowemailsuggester.util;
 
-import com.fewlaps.quitnowemailsuggester.util.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
 
