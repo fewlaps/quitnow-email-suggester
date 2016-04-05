@@ -27,9 +27,6 @@ public class Repository {
                 while (sc.hasNextLine()) {
                     lines.add(sc.nextLine());
                 }
-                if (sc.ioException() != null) {
-                    throw sc.ioException();
-                }
             } finally {
                 if (inputStream != null) {
                     inputStream.close();
@@ -57,9 +54,6 @@ public class Repository {
                 sc = new Scanner(inputStream, "UTF-8");
                 while (sc.hasNextLine()) {
                     sb.append(sc.nextLine());
-                }
-                if (sc.ioException() != null) {
-                    throw sc.ioException();
                 }
             } finally {
                 if (inputStream != null) {
