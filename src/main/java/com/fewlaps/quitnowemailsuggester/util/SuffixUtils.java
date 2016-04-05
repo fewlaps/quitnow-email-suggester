@@ -1,40 +1,27 @@
 package com.fewlaps.quitnowemailsuggester.util;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import com.fewlaps.quitnowemailsuggester.file.FileUtils;
 
-/**
- * Created by edgeorge on 15/09/15.
- */
+import java.io.IOException;
+import java.security.InvalidParameterException;
+import java.util.List;
+
 public class SuffixUtils {
     private final String FILE_LOCATION = "list/public_suffix_list.dat";
 
-
-    public Scanner getFileScanner() throws FileNotFoundException {
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(FILE_LOCATION).getFile());
-
-        return new Scanner(file);
-    }
-
-    public boolean isValidSuffix(String suffix) throws FileNotFoundException {
-
-        if (suffix == null || suffix.isEmpty())
-            return false;
-
-        Scanner scanner = getFileScanner();
-        try {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                if (line.equals(suffix)) {
-                    return true;
-                }
-            }
-            return false;
-        } finally {
-            scanner.close();
+    public boolean isValidSuffix(String suffix) throws IOException {
+        if (suffix == null || suffix.isEmpty()) {
+            throw new InvalidParameterException("The suffix can't be null or blank");
         }
-    }
 
+        suffix = suffix.trim();
+        List<String> lines = new FileUtils().getFileLines(FILE_LOCATION);
+
+        for (String line : lines) {
+            if (line.trim().equalsIgnoreCase(suffix)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -4,14 +4,13 @@ import com.fewlaps.quitnowemailsuggester.util.SuffixUtils;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.security.InvalidParameterException;
+import java.util.List;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
 
-/**
- * Created by edgeorge on 15/09/15.
- */
 public class SuffixUtilsTest {
 
     SuffixUtils su;
@@ -22,37 +21,32 @@ public class SuffixUtilsTest {
     }
 
     @Test
-    public void shouldGetFileScanner() throws FileNotFoundException {
-        assertTrue(su.getFileScanner() != null);
-    }
-
-    @Test
-    public void checkValidSuffix01() throws FileNotFoundException {
+    public void checkValidSuffix01() throws IOException {
         assertTrue(su.isValidSuffix("co.uk"));
     }
 
     @Test
-    public void checkValidSuffix02() throws FileNotFoundException {
+    public void checkValidSuffix02() throws IOException {
         assertTrue(su.isValidSuffix("com"));
     }
 
     @Test
-    public void checkValidSuffix03() throws FileNotFoundException {
+    public void checkValidSuffix03() throws IOException {
         assertFalse(su.isValidSuffix("con"));
     }
 
-    @Test
-    public void checkValidSuffix04() throws FileNotFoundException {
+    @Test(expected = InvalidParameterException.class)
+    public void checkValidSuffix04() throws IOException {
         assertFalse(su.isValidSuffix(""));
     }
 
-    @Test
-    public void checkValidSuffix05() throws FileNotFoundException {
+    @Test(expected = InvalidParameterException.class)
+    public void checkValidSuffix05() throws IOException {
         assertFalse(su.isValidSuffix(null));
     }
 
     @Test
-    public void checkValidSuffixBarcelona() throws FileNotFoundException {
+    public void checkValidSuffixBarcelona() throws IOException {
         assertTrue(su.isValidSuffix("barcelona"));
     }
 
