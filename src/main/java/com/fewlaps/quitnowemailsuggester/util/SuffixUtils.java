@@ -11,21 +11,16 @@ public class SuffixUtils {
     private final String FILE_LOCATION = "list/public_suffix_list.dat";
 
 
-    public Scanner getFileScanner() {
+    public Scanner getFileScanner() throws FileNotFoundException {
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource(FILE_LOCATION).getFile());
 
-        try {
-            return new Scanner(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return null;
+        return new Scanner(file);
     }
 
-    public boolean isValidSuffix(String suffix) {
+    public boolean isValidSuffix(String suffix) throws FileNotFoundException {
 
-        if(suffix == null || suffix.isEmpty())
+        if (suffix == null || suffix.isEmpty())
             return false;
 
         Scanner scanner = getFileScanner();
@@ -37,7 +32,7 @@ public class SuffixUtils {
                 }
             }
             return false;
-        }finally {
+        } finally {
             scanner.close();
         }
     }
