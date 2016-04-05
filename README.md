@@ -7,26 +7,60 @@
 # [QuitNow!](http://quitnowapp.com)'s e-mail suggester
 People don't write e-mail addresses without misspelling from time to time. @gmial.con addresses are too common... And we need to put a stop to it!
 
-QuitNow!'s server is doing the usual e-mail validaton during user creation time. We're doing it like everyone does: sending an e-mail to the user, and waiting for the user to click a link. The only validation we do is to check the e-mail with usual regex... but we need to go a little beyond that. Looking for *.CON* and suggesting *.COM* is something that would make the world a better place!
+QuitNow!'s server is doing the usual e-mail validaton during user creation time. We're doing it like everyone does: sending an e-mail to the user, and waiting for the user to click a link. The only validation we do is to check the e-mail with usual regex... but we need to go a little beyond that. Looking for *.con* and suggesting *.com* is something that would make the world a better place!
 
-By the way, we recently learnt a lot about TDD (Test-Driven Development) at some [Karumi](https://github.com/Karumi) masterclasses, so we decided to go on with TDD. The only way to master something is by doing. 
-
-Incidentally, it will be useful if we improve our e-mail validation (and, hopefully, yours).
+By the way, we recently learnt a lot about TDD (Test-Driven Development) at some [Karumi](https://github.com/Karumi) masterclasses, so we decided to go on with TDD. The only way to master something is by doing. Incidentally, it will be useful if we improve our e-mail validation (and, hopefully, yours).
 
 If you want to see what suggestions and validations are being done, <a href="https://github.com/Fewlaps/quitnow-email-suggester/tree/master/src/test/java/com/fewlaps/quitnowemailsuggester">check the actual tests</a>. It's an easy way for us to document the behaviour, and it's the tried-and-true list for you to know what's exactly happening here.
 
-Don't hesitate to add some issues and good (failing) tests! And, of course, if you want to contribute to the project with new features, it will be really appreciated :·)
+##How it works?
+
+```java
+// Hello! Let me show the magic of this library: the email suggester
+EmailSuggester suggester = new EmailSuggester();
+
+// It is a little thing that has an algorithm to fix human typos.
+// Let's say your user mistyped his email address:
+String badEmail = "roc@gmial.com";
+String goodEmail = suggester.getSuggestedEmail(badEmail);
+// goodEmail will contain the fixed email address. WOW!
+// And there are tons of email fixes. They're listed at https://goo.gl/IF52EV
+// In addition, it will never suggest a bad domain. All the suggestions are written one by one,
+// based on the QuitNow! users and their e-mail bounces. If it doesn't know nothing
+// better than the input, it will return the same email.
+
+// Well! Something else? Yes: this library hosts some more email related things
+EmailValidator validator = new EmailValidator();
+validator.hasGoodSyntax(goodEmail); //It matches the email regex?
+validator.hasValidTld(goodEmail); //It has a valid TLD?
+validator.isAlias(goodEmail); //Is it an alias?
+validator.isDisposable(goodEmail); //Is it listed as a disposable domain?
+
+// To finish up: if you work with Android, you'll find roc@fewlaps.com:WhatEVER emails
+// If you want to clean them, here it goes:
+AndroidAccountEmailCleaner cleaner = new AndroidAccountEmailCleaner();
+String androidAccountEmail = "roc@fewlaps.com:WhatEVER";
+String cleanedEmail = cleaner.cleanEmail(androidAccountEmail);
+// cleanedEmail will contain roc@fewlaps.com
+```
+
+
+#### *.hasValidTld()* and *.isDisposable()* under the hood
+- *.hasValidTld()* is getting data from this public repo: https://github.com/publicsuffix/list
+- *.isDisposable()* is checking the domain against this another one: https://github.com/ivolo/disposable-email-domains
+The files are attached to the project so they're parsed locally.
+
 
 Download
 --------
 
-* Get <a href="https://github.com/Fewlaps/quitnow-email-suggester/releases/download/v1.3.4/quitnow-email-suggester-1.3.4.jar">the last .jar</a> 
+* Get <a href="https://github.com/Fewlaps/quitnow-email-suggester/releases/download/v2.0.0/quitnow-email-suggester-2.0.0.jar">the latest .jar</a> 
 
 * Grab via Gradle:
 ```groovy
 repositories { jcenter() }
     
-compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3.4'
+compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:2.0.0'
 ```
 * Grab via Maven:
 ```xml
@@ -38,7 +72,7 @@ compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:1.3.4'
 <dependency>
     <groupId>com.fewlaps.quitnowemailsuggester</groupId>
     <artifactId>quitnow-email-suggester</artifactId>
-    <version>1.3.4</version>
+    <version>2.0.0</version>
 </dependency>
 ```
 
