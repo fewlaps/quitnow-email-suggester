@@ -38,7 +38,7 @@ public class EmailValidator {
         return matcher.matches();
     }
 
-    public boolean hasValidTld(String email) throws IOException, InvalidEmailException {
+    public boolean hasValidTld(String email) throws InvalidEmailException {
         if (email == null || email.isEmpty()) {
             throw new InvalidParameterException("The suffix can't be null or blank");
         }
@@ -58,7 +58,7 @@ public class EmailValidator {
         return hasGoodSyntax(email) && aliasPattern.matcher(email).find();
     }
 
-    public boolean isDisposable(String email) throws IOException, InvalidEmailException {
+    public boolean isDisposable(String email) throws InvalidEmailException {
         if (email == null || email.isEmpty()) {
             throw new InvalidParameterException("The email can't be null or blank");
         }

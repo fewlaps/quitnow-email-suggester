@@ -14,58 +14,66 @@ public class Repository {
     private final String SUFFIX_FILE_LOCATION = "list/public_suffix_list.dat";
     private final String DISPOSABLES_FILE_LOCATION = "disposables/index.json";
 
-    public List<String> getTlds() throws IOException {
-        List<String> lines = new ArrayList();
-        FileInputStream inputStream = null;
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(SUFFIX_FILE_LOCATION).getFile());
-        Scanner sc = null;
+    public List<String> getTlds() {
         try {
-            inputStream = new FileInputStream(file);
-            sc = new Scanner(inputStream, "UTF-8");
-            while (sc.hasNextLine()) {
-                lines.add(sc.nextLine());
+            List<String> lines = new ArrayList();
+            FileInputStream inputStream = null;
+            ClassLoader classLoader = getClass().getClassLoader();
+            File file = new File(classLoader.getResource(SUFFIX_FILE_LOCATION).getFile());
+            Scanner sc = null;
+            try {
+                inputStream = new FileInputStream(file);
+                sc = new Scanner(inputStream, "UTF-8");
+                while (sc.hasNextLine()) {
+                    lines.add(sc.nextLine());
+                }
+                if (sc.ioException() != null) {
+                    throw sc.ioException();
+                }
+            } finally {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                if (sc != null) {
+                    sc.close();
+                }
             }
-            if (sc.ioException() != null) {
-                throw sc.ioException();
-            }
-        } finally {
-            if (inputStream != null) {
-                inputStream.close();
-            }
-            if (sc != null) {
-                sc.close();
-            }
-        }
 
-        return lines;
+            return lines;
+        } catch (IOException e) {
+            return null;
+        }
     }
 
-    public String[] getDisposables() throws IOException {
-        StringBuilder sb = new StringBuilder();
-        FileInputStream inputStream = null;
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(DISPOSABLES_FILE_LOCATION).getFile());
-        Scanner sc = null;
+    public String[] getDisposables() {
         try {
-            inputStream = new FileInputStream(file);
-            sc = new Scanner(inputStream, "UTF-8");
-            while (sc.hasNextLine()) {
-                sb.append(sc.nextLine());
+            StringBuilder sb = new StringBuilder();
+            FileInputStream inputStream = null;
+            ClassLoader classLoader = getClass().getClassLoader();
+            File file = new File(classLoader.getResource(DISPOSABLES_FILE_LOCATION).getFile());
+            Scanner sc = null;
+            try {
+                inputStream = new FileInputStream(file);
+                sc = new Scanner(inputStream, "UTF-8");
+                while (sc.hasNextLine()) {
+                    sb.append(sc.nextLine());
+                }
+                if (sc.ioException() != null) {
+                    throw sc.ioException();
+                }
+            } finally {
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                if (sc != null) {
+                    sc.close();
+                }
             }
-            if (sc.ioException() != null) {
-                throw sc.ioException();
-            }
-        } finally {
-            if (inputStream != null) {
-                inputStream.close();
-            }
-            if (sc != null) {
-                sc.close();
-            }
-        }
 
-        Gson gson = new Gson();
-        return gson.fromJson(sb.toString(), String[].class);
+            Gson gson = new Gson();
+            return gson.fromJson(sb.toString(), String[].class);
+        } catch (IOException e) {
+            return null;
+        }
     }
 }

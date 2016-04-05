@@ -4,7 +4,6 @@ import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.security.InvalidParameterException;
 
 import static junit.framework.Assert.assertFalse;
@@ -210,46 +209,46 @@ public class EmailValidatorTest {
 
     //region .hasValidTld
     @Test
-    public void checkValidTld01() throws IOException, InvalidEmailException {
+    public void checkValidTld01() throws InvalidEmailException {
         assertTrue(ev.hasValidTld("something@fewlaps.co.uk"));
     }
 
     @Test
-    public void checkValidTld02() throws IOException, InvalidEmailException {
+    public void checkValidTld02() throws InvalidEmailException {
         assertTrue(ev.hasValidTld("something@fewlaps.com"));
     }
 
     @Test
-    public void checkValidTldBarcelona() throws IOException, InvalidEmailException {
+    public void checkValidTldBarcelona() throws InvalidEmailException {
         assertTrue(ev.hasValidTld("something@fewlaps.barcelona"));
     }
 
     @Test
-    public void shouldReturnFalse_forInvalidCon() throws IOException, InvalidEmailException {
+    public void shouldReturnFalse_forInvalidCon() throws InvalidEmailException {
         assertFalse(ev.hasValidTld("something@fewlaps.con"));
     }
 
     @Test(expected = InvalidParameterException.class)
-    public void shouldLaunchAnInvalidParameterException_forBlank() throws IOException, InvalidEmailException {
+    public void shouldLaunchAnInvalidParameterException_forBlank() throws InvalidEmailException {
         ev.hasValidTld("");
     }
 
     @Test(expected = InvalidParameterException.class)
-    public void shouldLaunchAnInvalidParameterException_forNull() throws IOException, InvalidEmailException {
+    public void shouldLaunchAnInvalidParameterException_forNull() throws InvalidEmailException {
         ev.hasValidTld(null);
     }
     //endregion
 
     //region .isDisposable()
     @Test
-    public void shouldSayTrue_fakeInboxCom() throws IOException, InvalidEmailException {
+    public void shouldSayTrue_fakeInboxCom() throws InvalidEmailException {
         String email = "something@fakeinbox.com";
         boolean result = ev.isDisposable(email);
         assertTrue(result);
     }
 
     @Test
-    public void shouldSayFalse_fewlapsCom() throws IOException, InvalidEmailException {
+    public void shouldSayFalse_fewlapsCom() throws InvalidEmailException {
         String email = "something@fewlaps.com";
         boolean result = ev.isDisposable(email);
         assertFalse(result);
