@@ -1,5 +1,6 @@
 package com.fewlaps.quitnowemailsuggester;
 
+import com.fewlaps.quitnowemailsuggester.bean.EmailCorrection;
 import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
 
 import java.util.Arrays;

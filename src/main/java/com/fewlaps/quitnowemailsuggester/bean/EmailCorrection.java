@@ -1,4 +1,4 @@
-package com.fewlaps.quitnowemailsuggester;
+package com.fewlaps.quitnowemailsuggester.bean;
 
 public class EmailCorrection {
     private final String badEnd;
