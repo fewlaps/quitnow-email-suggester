@@ -1,4 +1,4 @@
-package com.fewlaps.quitnowemailsuggester.util;
+package com.fewlaps.quitnowemailsuggester;
 
 import com.fewlaps.quitnowemailsuggester.file.FileUtils;
 
@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.security.InvalidParameterException;
 import java.util.List;
 
-public class SuffixUtils {
+public class TldValidator {
     private final String FILE_LOCATION = "list/public_suffix_list.dat";
 
-    public boolean isValidSuffix(String suffix) throws IOException {
+    public boolean isValidTld(String suffix) throws IOException {
         if (suffix == null || suffix.isEmpty()) {
             throw new InvalidParameterException("The suffix can't be null or blank");
         }
