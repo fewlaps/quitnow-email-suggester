@@ -253,5 +253,17 @@ public class EmailValidatorTest {
         boolean result = ev.isDisposable(email);
         assertFalse(result);
     }
+
+    @Test(expected = InvalidParameterException.class)
+    public void shouldLaunchAnException_whenEmailIsNull() throws InvalidEmailException {
+        String email = null;
+        ev.isDisposable(email);
+    }
+
+    @Test(expected = InvalidParameterException.class)
+    public void shouldLaunchAnException_whenEmailIsBlank() throws InvalidEmailException {
+        String email = "";
+        ev.isDisposable(email);
+    }
     //endregion
 }
