@@ -6,13 +6,13 @@ import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
-public class EmailPartsTest {
+public class EmailPartsSplitterTest {
 
-    EmailParts ep;
+    EmailPartsSplitter ep;
 
     @Before
     public void init() {
-        ep = new EmailParts();
+        ep = new EmailPartsSplitter();
     }
 
     @Test
@@ -63,57 +63,33 @@ public class EmailPartsTest {
         assertEquals("hitmail", ep.getDomainWithoutTld("roc@hitmail.it"));
     }
 
-    @Test
+    @Test(expected = InvalidEmailException.class)
     public void shouldLaunchAnInvalidEmailExceptionForNullAtGetTld() throws InvalidEmailException {
-        try {
-            ep.getTld(null);
-        } catch (InvalidEmailException e) {
-            return; //This is what we expect
-        }
+        ep.getTld(null);
     }
 
-    @Test
+    @Test(expected = InvalidEmailException.class)
     public void shouldLaunchAnInvalidEmailExceptionForNopeAtGetTld() throws InvalidEmailException {
-        try {
-            ep.getTld("nope");
-        } catch (InvalidEmailException e) {
-            return; //This is what we expect
-        }
+        ep.getTld("nope");
     }
 
-    @Test
+    @Test(expected = InvalidEmailException.class)
     public void shouldLaunchAnInvalidEmailExceptionForNullAtGetDomain() throws InvalidEmailException {
-        try {
-            ep.getDomain(null);
-        } catch (InvalidEmailException e) {
-            return; //This is what we expect
-        }
+        ep.getDomain(null);
     }
 
-    @Test
+    @Test(expected = InvalidEmailException.class)
     public void shouldLaunchAnInvalidEmailExceptionForNopeAtGetDomain() throws InvalidEmailException {
-        try {
-            ep.getDomain("nope");
-        } catch (InvalidEmailException e) {
-            return; //This is what we expect
-        }
+        ep.getDomain("nope");
     }
 
-    @Test
+    @Test(expected = InvalidEmailException.class)
     public void shouldLaunchAnInvalidEmailExceptionForNullAtGetDomainWoTld() throws InvalidEmailException {
-        try {
-            ep.getDomainWithoutTld(null);
-        } catch (InvalidEmailException e) {
-            return; //This is what we expect
-        }
+        ep.getDomainWithoutTld(null);
     }
 
-    @Test
+    @Test(expected = InvalidEmailException.class)
     public void shouldLaunchAnInvalidEmailExceptionForNopeAtGetDomainWoTld() throws InvalidEmailException {
-        try {
-            ep.getDomainWithoutTld("nope");
-        } catch (InvalidEmailException e) {
-            return; //This is what we expect
-        }
+        ep.getDomainWithoutTld("nope");
     }
 }

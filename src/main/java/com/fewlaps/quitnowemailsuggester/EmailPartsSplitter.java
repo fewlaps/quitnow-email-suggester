@@ -3,9 +3,12 @@ package com.fewlaps.quitnowemailsuggester;
 import com.fewlaps.quitnowemailsuggester.exception.InvalidEmailException;
 import com.fewlaps.quitnowemailsuggester.util.StringUtils;
 
-public class EmailParts {
+public class EmailPartsSplitter {
+
+    EmailValidator ev = new EmailValidator();
+
     public String getTld(String email) throws InvalidEmailException {
-        if (email == null) {
+        if (email == null || !ev.hasGoodSyntax(email)) {
             throw new InvalidEmailException();
         }
 
@@ -20,7 +23,7 @@ public class EmailParts {
     }
 
     public String getDomain(String email) throws InvalidEmailException {
-        if (email == null) {
+        if (email == null || !ev.hasGoodSyntax(email)) {
             throw new InvalidEmailException();
         }
 
@@ -28,7 +31,7 @@ public class EmailParts {
     }
 
     public String getDomainWithoutTld(String email) throws InvalidEmailException {
-        if (email == null) {
+        if (email == null || !ev.hasGoodSyntax(email)) {
             throw new InvalidEmailException();
         }
 

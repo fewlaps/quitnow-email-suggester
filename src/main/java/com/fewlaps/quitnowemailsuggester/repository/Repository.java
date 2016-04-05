@@ -1,4 +1,4 @@
-package com.fewlaps.quitnowemailsuggester.file;
+package com.fewlaps.quitnowemailsuggester.repository;
 
 import com.google.gson.Gson;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class QuitNowEmailSuggesterFilesReader {
+public class Repository {
 
     private final String SUFFIX_FILE_LOCATION = "list/public_suffix_list.dat";
     private final String DISPOSABLES_FILE_LOCATION = "disposables/index.json";
