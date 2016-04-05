@@ -13,12 +13,12 @@ import static org.junit.Assert.assertTrue;
 public class GoodEmailsTest {
 
     EmailSuggester es;
-    EmailValidator ev;
+    EmailSyntaxValidator ev;
 
     @Before
     public void init() {
         es = new EmailSuggester();
-        ev = new EmailValidator();
+        ev = new EmailSyntaxValidator();
     }
 
     @Test

@@ -3,7 +3,7 @@ package com.fewlaps.quitnowemailsuggester;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class EmailValidator {
+public class EmailSyntaxValidator {
 
     private final Pattern emailPattern;
     private final Pattern aliasPattern;
@@ -20,7 +20,7 @@ public class EmailValidator {
 
     private static final String ALIAS_PATTERN = "([^\\s]+(\\+([\\w])*@))";
 
-    public EmailValidator() {
+    public EmailSyntaxValidator() {
         emailPattern = Pattern.compile(EMAIL_PATTERN);
         aliasPattern = Pattern.compile(ALIAS_PATTERN);
     }

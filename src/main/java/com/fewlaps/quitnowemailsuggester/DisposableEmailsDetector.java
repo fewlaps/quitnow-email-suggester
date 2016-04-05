@@ -6,7 +6,7 @@ import com.fewlaps.quitnowemailsuggester.file.QuitNowEmailSuggesterFilesReader;
 import java.io.IOException;
 import java.security.InvalidParameterException;
 
-public class DisposableEmailsFilter {
+public class DisposableEmailsDetector {
 
     private EmailParts ep = new EmailParts();
 

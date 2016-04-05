@@ -6,13 +6,13 @@ import org.junit.Test;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
-public class EmailValidatorTest {
+public class EmailSyntaxValidatorTest {
 
-    EmailValidator ev;
+    EmailSyntaxValidator ev;
 
     @Before
     public void init() {
-        ev = new EmailValidator();
+        ev = new EmailSyntaxValidator();
     }
 
     @Test
