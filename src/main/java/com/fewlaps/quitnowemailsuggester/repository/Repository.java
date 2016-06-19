@@ -18,7 +18,7 @@ public class Repository {
         try {
             List<String> lines = new ArrayList();
             FileInputStream inputStream = null;
-            ClassLoader classLoader = getClass().getClassLoader();
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             File file = new File(classLoader.getResource(SUFFIX_FILE_LOCATION).getFile());
             Scanner sc = null;
             try {
@@ -46,7 +46,7 @@ public class Repository {
         try {
             StringBuilder sb = new StringBuilder();
             FileInputStream inputStream = null;
-            ClassLoader classLoader = getClass().getClassLoader();
+            ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
             File file = new File(classLoader.getResource(DISPOSABLES_FILE_LOCATION).getFile());
             Scanner sc = null;
             try {
