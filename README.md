@@ -48,8 +48,14 @@ String cleanedEmail = cleaner.cleanEmail(androidAccountEmail);
 #### *.hasValidTld()* and *.isDisposable()* under the hood
 - *.hasValidTld()* is getting data from this public repo: https://github.com/publicsuffix/list
 - *.isDisposable()* is checking the domain against this another one: https://github.com/ivolo/disposable-email-domains
-The files are attached to the project so they're parsed locally.
 
+The files needs to be attached to the project cause they're parsed locally.
+
+So,before start, initalise git submodules:
+
+```
+git submodule update --init --recursive
+```
 
 Download
 --------
