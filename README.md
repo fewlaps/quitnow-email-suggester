@@ -85,6 +85,47 @@ compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:2.0.0'
 Use the API
 -----------
 
+### Validate email
+
+Create an instance of `EmailValidator`
+
+```java
+EmailValidator ev = new EmailValidator();
+```
+
+Check if email is valid, or is alias
+
+`ev.isValidEmail("firstname.lastname@example.com");` -> `true`
+`ev.isValidEmail("Abc..123@example.com");` -> `false`
+
+`ev.isAliasEmail("alias+test@example.com");` -> true
+`ev.isAliasEmail("alias@example.com");` -> false
+
+---
+
+
+### Suggest email
+
+Create an instance of `EmailSuggester`
+
+```java
+EmailSuggester es = new EmailSuggester();
+```
+
+Use suggester to get a valid email, from a possible bad email
+
+```
+String email = es.getSuggestedEmail("roc@fewlaps.con");
+```
+> email -> roc@fewlaps.com
+
+```
+String email = es.getSuggestedEmail("roc@bananas.con");
+```
+> email -> roc@bananas.con
+
+---
+
 There's also an open source project that works with this algorithm. Check it and star it!
 
 [QuitNow!'s e-mail suggester API](https://github.com/Fewlaps/quitnow-email-suggester-api)
