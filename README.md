@@ -13,7 +13,7 @@ By the way, we recently learnt a lot about TDD (Test-Driven Development) at some
 
 If you want to see what suggestions and validations are being done, <a href="https://github.com/Fewlaps/quitnow-email-suggester/tree/master/src/test/java/com/fewlaps/quitnowemailsuggester">check the actual tests</a>. It's an easy way for us to document the behaviour, and it's the tried-and-true list for you to know what's exactly happening here.
 
-##How it works?
+## How it works?
 
 ```java
 // Hello! Let me show the magic of this library: the email suggester
@@ -57,8 +57,7 @@ So,before start, initalise git submodules:
 git submodule update --init --recursive
 ```
 
-Download
---------
+## Download
 
 * Get <a href="https://github.com/Fewlaps/quitnow-email-suggester/releases/download/v2.0.0/quitnow-email-suggester-2.0.0.jar">the latest .jar</a> 
 
@@ -82,8 +81,7 @@ compile 'com.fewlaps.quitnowemailsuggester:quitnow-email-suggester:2.0.0'
 </dependency>
 ```
 
-Use the API
------------
+## Use the API
 
 There's also an open source project that works with this algorithm. Check it and star it!
 
@@ -91,7 +89,7 @@ There's also an open source project that works with this algorithm. Check it and
 
 
 
-## LICENSE ##
+## LICENSE
 
 The MIT License (MIT)
 
