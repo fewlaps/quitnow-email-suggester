@@ -15,6 +15,7 @@ If you want to see what suggestions and validations are being done, <a href="htt
 
 ## How it works?
 
+### Email suggester
 ```java
 // Hello! Let me show the magic of this library: the email suggester
 EmailSuggester suggester = new EmailSuggester();
@@ -28,7 +29,10 @@ String goodEmail = suggester.getSuggestedEmail(badEmail);
 // In addition, it will never suggest a bad domain. All the suggestions are written one by one,
 // based on the QuitNow! users and their e-mail bounces. If it doesn't know nothing
 // better than the input, it will return the same email.
+```
 
+### Email validator & Android account email cleaner
+```java
 // Well! Something else? Yes: this library hosts some more email related things
 EmailValidator validator = new EmailValidator();
 validator.hasGoodSyntax(goodEmail); //It matches the email regex?
