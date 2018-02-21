@@ -195,4 +195,10 @@ public class EmailSuggestorGoodEmailsTest {
         assertTrue(ev.hasGoodSyntax(email));
         assertEquals(email, es.getSuggestedEmail(email));
     }
+    
+    @Test
+    public void emailWithNumbersShouldBeValid() throws InvalidEmailException {
+        String email = "fewlaps1fewlaps@yahoo.com";
+        assertTrue(ev.hasGoodSyntax(email));
+    }
 }
