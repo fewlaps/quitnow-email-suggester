@@ -55,7 +55,7 @@ String cleanedEmail = cleaner.cleanEmail(androidAccountEmail);
 
 The files needs to be attached to the project cause they're parsed locally.
 
-So,before start, initalise git submodules:
+So, before starting, initalise git submodules:
 
 ```
 git submodule update --init --recursive
