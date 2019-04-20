@@ -35,8 +35,8 @@ String goodEmail = suggester.getSuggestedEmail(badEmail);
 ```java
 // Well! Something else? Yes: this library hosts some more email related things
 EmailValidator validator = new EmailValidator();
-validator.hasGoodSyntax(goodEmail); //It matches the email regex?
-validator.hasValidTld(goodEmail); //It has a valid TLD?
+validator.hasGoodSyntax(goodEmail); //Does it match the email regex?
+validator.hasValidTld(goodEmail); //Has it a valid TLD?
 validator.isAlias(goodEmail); //Is it an alias?
 validator.isDisposable(goodEmail); //Is it listed as a disposable domain?
 
