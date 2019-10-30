@@ -29,7 +29,8 @@ public class EmailSuggester {
             new EmailCorrection(".coml", DOTCOM),
             new EmailCorrection(".ney", DOTNET),
             new EmailCorrection(".nte", DOTNET),
-            new EmailCorrection(".ft", DOTFR)
+            new EmailCorrection(".ft", DOTFR),
+            new EmailCorrection(".vom", DOTCOM)
     );
 
     public List<EmailCorrection> domainCorrections = Arrays.asList(
@@ -54,11 +55,13 @@ public class EmailSuggester {
             new EmailCorrection("homtail", HOTMAIL),
             new EmailCorrection("hotnail", HOTMAIL),
             new EmailCorrection("hormail", HOTMAIL),
+            new EmailCorrection("hotmmail", HOTMAIL),
 
             new EmailCorrection("yaho", YAHOO),
             new EmailCorrection("yaoo", YAHOO),
             new EmailCorrection("yaboo", YAHOO),
             new EmailCorrection("yahou", YAHOO),
+            new EmailCorrection("uahoo", YAHOO),
 
             new EmailCorrection("outllok", OUTLOOK),
             new EmailCorrection("outilook", OUTLOOK)

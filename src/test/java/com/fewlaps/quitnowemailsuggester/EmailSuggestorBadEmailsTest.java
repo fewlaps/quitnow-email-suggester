@@ -341,4 +341,19 @@ public class EmailSuggestorBadEmailsTest {
     public void shouldFixYahou() throws InvalidEmailException {
         assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yahou.com"));
     }
+
+    @Test
+    public void shouldFixGmailDotVom() throws InvalidEmailException {
+        assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.vom"));
+    }
+
+    @Test
+    public void shouldFixHotmmailDotCom() throws InvalidEmailException {
+        assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hotmmail.com"));
+    }
+
+    @Test
+    public void shouldFixUahooDotCom() throws InvalidEmailException {
+        assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@uahoo.com"));
+    }
 }
