@@ -30,7 +30,8 @@ public class EmailSuggester {
             new EmailCorrection(".ney", DOTNET),
             new EmailCorrection(".nte", DOTNET),
             new EmailCorrection(".ft", DOTFR),
-            new EmailCorrection(".vom", DOTCOM)
+            new EmailCorrection(".vom", DOTCOM),
+            new EmailCorrection(".fe", DOTFR)
     );
 
     public List<EmailCorrection> domainCorrections = Arrays.asList(
