@@ -333,6 +333,11 @@ public class EmailSuggestorBadEmailsTest {
     }
 
     @Test
+    public void shouldReplaceFeToFr() throws InvalidEmailException {
+        assertEquals("roc@hotmail.fr", es.getSuggestedEmail("roc@hotmail.fe"));
+    }
+
+    @Test
     public void shouldFixGmaikDotCom() throws InvalidEmailException {
         assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmaik.com"));
     }
@@ -340,5 +345,20 @@ public class EmailSuggestorBadEmailsTest {
     @Test
     public void shouldFixYahou() throws InvalidEmailException {
         assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yahou.com"));
+    }
+
+    @Test
+    public void shouldFixGmailDotVom() throws InvalidEmailException {
+        assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.vom"));
+    }
+
+    @Test
+    public void shouldFixHotmmailDotCom() throws InvalidEmailException {
+        assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hotmmail.com"));
+    }
+
+    @Test
+    public void shouldFixUahooDotCom() throws InvalidEmailException {
+        assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@uahoo.com"));
     }
 }
