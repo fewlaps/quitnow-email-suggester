@@ -27,6 +27,8 @@ public class EmailSuggester {
             new EmailCorrection(".comm", DOTCOM),
             new EmailCorrection(".cxom", DOTCOM),
             new EmailCorrection(".coml", DOTCOM),
+            new EmailCorrection(".clm", DOTCOM),
+            new EmailCorrection(".cm", DOTCOM),
             new EmailCorrection(".ney", DOTNET),
             new EmailCorrection(".nte", DOTNET),
             new EmailCorrection(".ft", DOTFR),
@@ -45,6 +47,8 @@ public class EmailSuggester {
             new EmailCorrection("gmai", GMAIL),
             new EmailCorrection("gimail", GMAIL),
             new EmailCorrection("gmaik", GMAIL),
+            new EmailCorrection("gemail", GMAIL),
+            new EmailCorrection("gmali", GMAIL),
 
             new EmailCorrection("hotmaail", HOTMAIL),
             new EmailCorrection("hotmal", HOTMAIL),
@@ -63,6 +67,7 @@ public class EmailSuggester {
             new EmailCorrection("yaboo", YAHOO),
             new EmailCorrection("yahou", YAHOO),
             new EmailCorrection("uahoo", YAHOO),
+            new EmailCorrection("yhoo", YAHOO),
 
             new EmailCorrection("outllok", OUTLOOK),
             new EmailCorrection("outilook", OUTLOOK)

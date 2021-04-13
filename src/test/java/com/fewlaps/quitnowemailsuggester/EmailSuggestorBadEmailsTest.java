@@ -361,4 +361,29 @@ public class EmailSuggestorBadEmailsTest {
     public void shouldFixUahooDotCom() throws InvalidEmailException {
         assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@uahoo.com"));
     }
+
+    @Test
+    public void shouldFixGmaliDotCom() throws InvalidEmailException {
+        assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmali.com"));
+    }
+
+    @Test
+    public void shouldFixHotmailDotCm() throws InvalidEmailException {
+        assertEquals("roc@hotmail.com", es.getSuggestedEmail("roc@hotmail.cm"));
+    }
+
+    @Test
+    public void shouldFixYhooDotCom() throws InvalidEmailException {
+        assertEquals("roc@yahoo.com", es.getSuggestedEmail("roc@yhoo.com"));
+    }
+
+    @Test
+    public void shouldFixGemalDotCom() throws InvalidEmailException {
+        assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gemail.com"));
+    }
+
+    @Test
+    public void shouldFixGmailDotClm() throws InvalidEmailException {
+        assertEquals("roc@gmail.com", es.getSuggestedEmail("roc@gmail.clm"));
+    }
 }
